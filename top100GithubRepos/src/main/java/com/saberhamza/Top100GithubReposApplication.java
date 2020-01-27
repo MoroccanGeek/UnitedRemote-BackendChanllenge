@@ -1,4 +1,4 @@
-package com.saberhamza.top100GithubRepos;
+package com.saberhamza;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

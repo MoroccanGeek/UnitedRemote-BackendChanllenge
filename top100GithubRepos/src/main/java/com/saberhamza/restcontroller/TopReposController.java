@@ -21,6 +21,7 @@ public class TopReposController {
 	@GetMapping(value="/top100repos",produces = MediaTypes.HAL_JSON_VALUE)
 	public List<Item> getTrendingLanguages(){
 
+		System.out.println("Hello");
 		//Get top 100 repositories with a specified language
 		return itemService.loadTop100Repos();
 		
