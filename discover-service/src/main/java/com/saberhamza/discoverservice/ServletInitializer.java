@@ -1,4 +1,4 @@
-package io.javabrains.discoverservice;
+package com.saberhamza.discoverservice;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

@@ -1,4 +1,4 @@
-package io.javabrains.discoverservice;
+package com.saberhamza.discoverservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

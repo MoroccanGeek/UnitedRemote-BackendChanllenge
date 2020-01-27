@@ -1,4 +1,4 @@
-package io.javabrains.discoverservice;
+package com.saberhamza.discoverservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
