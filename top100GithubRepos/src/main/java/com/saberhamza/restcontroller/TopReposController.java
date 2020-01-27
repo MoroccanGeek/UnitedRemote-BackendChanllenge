@@ -1,14 +1,12 @@
 package com.saberhamza.restcontroller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.MediaTypes;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.saberhamza.entity.Item;
+import com.saberhamza.entity.ItemCollections;
 import com.saberhamza.service.ItemService;
 
 @RestController
@@ -19,11 +17,9 @@ public class TopReposController {
 	ItemService itemService;
 	
 	@GetMapping(value="/top100repos",produces = MediaTypes.HAL_JSON_VALUE)
-	public List<Item> getTrendingLanguages(){
+	public ItemCollections getTrendingLanguages(){
 
-		System.out.println("Hello");
-		//Get top 100 repositories with a specified language
-		return itemService.loadTop100Repos();
+		return new ItemCollections(itemService.loadTop100Repos());
 		
 	}
 
