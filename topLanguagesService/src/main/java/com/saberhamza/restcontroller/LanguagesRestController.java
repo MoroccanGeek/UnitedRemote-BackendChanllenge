@@ -41,7 +41,7 @@ public class LanguagesRestController {
 	//After Bean is initialized, we get top 100 repositories which have a non NULL language
 	@PostConstruct
 	private void getGithubTop100Repos() {
-		githubTop100Repos = restTemplate.getForObject("http://localhost:8082/trending/top100repos", ItemCollections.class);
+		githubTop100Repos = restTemplate.getForObject("http://localhost:8079/repos/trending/top100repos", ItemCollections.class);
 	}
 	
 	@GetMapping(value="/languages",produces = MediaTypes.HAL_JSON_VALUE)
