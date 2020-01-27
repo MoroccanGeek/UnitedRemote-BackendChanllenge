@@ -1,5 +1,7 @@
 package com.saberhamza.restcontroller;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.MediaTypes;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,10 +18,18 @@ public class TopReposController {
 	@Autowired
 	ItemService itemService;
 	
+	private ItemCollections top100repos;
+	
+	@PostConstruct
+	public void populate() {
+		
+		top100repos = new ItemCollections(itemService.loadTop100Repos());
+	}
+	
 	@GetMapping(value="/top100repos",produces = MediaTypes.HAL_JSON_VALUE)
 	public ItemCollections getTrendingLanguages(){
 
-		return new ItemCollections(itemService.loadTop100Repos());
+		return top100repos;
 		
 	}
 
