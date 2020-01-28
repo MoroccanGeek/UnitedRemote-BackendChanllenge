@@ -1,0 +1,16 @@
+zuul:
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    toprepos-service:
+      path: /repos/** #path that will be intercepted
+      url: http://localhost:8082 #which url the request will e mapped to
+
+    toplanguages-service:
+      path: /github/**
+      url: http://localhost:8081
+      
+server:
+  port: 8079
