@@ -1,5 +1,7 @@
 package com.saberhamza.service;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -8,12 +10,11 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.springframework.hateoas.Link;
 import org.springframework.stereotype.Service;
 
 import com.saberhamza.entity.Item;
 import com.saberhamza.entity.Language;
-
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 @Service
 public class LanguageServiceImpl implements LanguageService {
@@ -64,8 +65,10 @@ public class LanguageServiceImpl implements LanguageService {
 		for(int i=0; i< top100Languages.size(); i++) {
 			
 			top100Languages.get(i)
-							.add(linkTo(LanguageServiceImpl.class).slash("trending/languages/"+(i+1)).withSelfRel())
-							.add(linkTo(LanguageServiceImpl.class).slash("trending/languages/"+(i+1)+"/repositories").withRel("repositories"));
+							.add(new Link("http://localhost:8079/github/trending/languages/"+(i+1)).withSelfRel())
+							.add(new Link("http://localhost:8079/github/trending/languages/"+(i+1)+"/repositories").withSelfRel());
+							//.add(linkTo(LanguageServiceImpl.class).slash("trending/languages/"+(i+1)).withSelfRel())
+							//.add(linkTo(LanguageServiceImpl.class).slash("trending/languages/"+(i+1)+"/repositories").withRel("repositories"));
 		}
 			
 		return top100Languages;
