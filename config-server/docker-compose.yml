@@ -1,0 +1,56 @@
+version: "2"
+
+services:
+  config-server:
+    image: config-server:0.0.1-SNAPSHOT
+    environment:
+      - JAVA_OPTS=
+         -DEUREKA_SERVER=http://discover-service:8762/eureka
+    ports:
+      - 8888:8888
+    network_mode: host
+  discover-service:
+    image: discover-service:0.0.1-SNAPSHOT
+    ports:
+      - 8762:8762
+    depends_on:
+      - config-server
+    restart: on-failure
+    network_mode: host
+  gateway-service:
+    image: gateway-service:0.0.1-SNAPSHOT
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discover-service:8762/eureka
+    depends_on:
+      - discover-service
+      - config-server
+    ports:
+      - 8079:8079
+    restart: on-failure
+    network_mode: host
+  top-hundred-github:
+    image: top-hundred-github-repos:0.0.1-SNAPSHOT
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discover-service:8762/eureka
+    depends_on:
+      - discover-service
+      - config-server
+    ports:
+      - 8082:8082
+    restart: on-failure
+    network_mode: host
+  top-languages-service:
+    image: top-languages-service:0.0.1-SNAPSHOT
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discover-service:8762/eureka
+    depends_on:
+      - discover-service
+      - config-server
+      - top-hundred-github
+    ports:
+      - 8081:8081
+    restart: on-failure
+    network_mode: host
