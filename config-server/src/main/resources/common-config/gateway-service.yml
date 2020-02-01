@@ -4,11 +4,11 @@ zuul:
     socket-timeout-millis: 20000
 
   routes:
-    toprepos-service:
+    top-hundred-github-repos:
       path: /repos/** #path that will be intercepted
       url: http://localhost:8082 #which url the request will e mapped to
 
-    toplanguages-service:
+    top-languages-service:
       path: /github/**
       url: http://localhost:8081
       
