@@ -27,7 +27,7 @@ REST microservice that list the languages used by the 100 trending public repos 
 
     Using **Spring Cloud Netflix Zuul**, we implement this microservice app that handles all the requests and does the dynamic routing of microservice apps.
     
-* Gateway Service (Running on port 8888):
+* Config Server (Running on port 8888):
 
     Using **Spring Cloud Config Server**, we implement this microservice app that provides resource-based API for external configuration (name-value pairs or equivalent YAML content). In here, we have all configurations for each service, and also common configurations shared among the services.
 
