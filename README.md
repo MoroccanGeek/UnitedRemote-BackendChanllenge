@@ -34,13 +34,28 @@ REST microservice that list the languages used by the 100 trending public repos 
 ## 2. Run the apps
 
 Before running make sure that the ports in the image above are not in use.
-We start the apps in this order:
+
+Each app has a folder called "target", that contains an executable JAR (and also a Docker file).
+
+Run each app's JAR in this order:
   
-   1. Config Server: running on port 8888
-   2. Discover service: running on port 8762
-   3. Gateway Service: running on port 8079
-   4. Top100GithubRepos Service: running on port 8082
-   5. TopLanguages Service: running on port 8081
+   1. Config Server: running on port 8888. Before doing anything check if the app is working using this :
+   	
+	localhost:8888/config-server/default
+   
+   This link displays the configuration for this app.
+   
+   2. Discover service: running on port 8762. Before doing anything check if the app is working using this :
+   
+          localhost:8762
+   
+   3. Gateway Service: running on port 8079. Before doing anything check if the app is working. Go to Eureka server, and see if the gateway service pops-up.
+   
+   4. Top100GithubRepos Service: running on port 8082. Check if the service name pops up in eureka.
+   
+   5. TopLanguages Service: running on port 8081. Check if the service name pops up in eureka.
+   
+At the end, you should have something like this:
    
 
 ## 3. Test REST API
