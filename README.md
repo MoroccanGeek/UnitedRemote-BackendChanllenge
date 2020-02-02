@@ -271,10 +271,12 @@ If {reposId} has some characters, we get the following response:
         "timeStamp": 1580656890422
       }
       ```
-## 3. Sho
-    
+## 3. Secutiy
 
-   
-   
-   
-   
+I didn't manage to implement security for this. I've spent couple of days trying my best to implement OAuth 2.0 and JWT with the little knowledge i have, with considering the gateway service (ZUUL server) as the Authorization server as well.
+
+## 4. Deploy
+
+For deploying, i've used Docker. It's not 100% working (It was an honorable defeat against docker :D). I've created for each microservice app an executable JARs and a Docker image. Check README.md file in "DockerizeDEV" branch for more info (demo video included !!)
+
+## 5. Demo video
