@@ -56,6 +56,10 @@ Run each app's JAR in this order:
    5. TopLanguages Service: running on port 8081. Check if the service name pops up in eureka.
    
 At the end, you should have something like this:
+
+<p align="center">
+  <img src="./img/Eureka-Server-Final-outcome.png" alt="Eureka Server Final Outcome" width="700">
+</p>
    
 
 ## 3. Test REST API
