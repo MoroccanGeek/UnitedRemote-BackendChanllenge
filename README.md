@@ -299,3 +299,5 @@ I didn't manage to implement security for this. I've spent couple of days trying
 For deploying, i've used Docker. It's not 100% working (It was an honorable defeat against docker :D). I've created for each microservice app an executable JARs and a Docker image. Check README.md file in "DockerizeDEV" branch for more info (demo video included !!)
 
 ## 5. Demo video
+
+Link: https://streamable.com/sz4m3
