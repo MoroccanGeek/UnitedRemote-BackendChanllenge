@@ -1,7 +1,5 @@
 package com.saberhamza.service;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -47,13 +45,7 @@ public class LanguageServiceImpl implements LanguageService {
 			
 			//Number of Repositories among the top 100 using current programming language
 			Integer reposCount = (int) tempItems.get().count();
-			
-			
-			//List of repositories using current programming language
-			//List<Repository> reposOfCurrentLanguage = getReposFrom(tempItems.get());
-			
-			
-			//top100Languages.add(new Language(langName, totalStars, reposCount, reposOfCurrentLanguage));
+
 			top100Languages.add(new Language(langName, totalStars, reposCount));
 
 		});
@@ -66,9 +58,7 @@ public class LanguageServiceImpl implements LanguageService {
 			
 			top100Languages.get(i)
 							.add(new Link("http://localhost:8079/github/trending/languages/"+(i+1)).withSelfRel())
-							.add(new Link("http://localhost:8079/github/trending/languages/"+(i+1)+"/repositories").withSelfRel());
-							//.add(linkTo(LanguageServiceImpl.class).slash("trending/languages/"+(i+1)).withSelfRel())
-							//.add(linkTo(LanguageServiceImpl.class).slash("trending/languages/"+(i+1)+"/repositories").withRel("repositories"));
+							.add(new Link("http://localhost:8079/github/trending/languages/"+(i+1)+"/repositories").withRel("repositories"));
 		}
 			
 		return top100Languages;
