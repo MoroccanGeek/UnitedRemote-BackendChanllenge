@@ -1,6 +1,6 @@
 spring:
   application:
-    name: toprepos-service
+    name: top-hundred-github-repos
   cloud:
     config:
       uri: http://localhost:8888
