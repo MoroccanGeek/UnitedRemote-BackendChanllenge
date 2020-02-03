@@ -29,7 +29,7 @@ services:
       - 8079:8079
     restart: on-failure
     network_mode: host
-  top-hundred-github:
+  top-hundred-github-repos:
     image: top-hundred-github-repos:0.0.1-SNAPSHOT
     environment:
       - JAVA_OPTS=
@@ -49,7 +49,7 @@ services:
     depends_on:
       - discover-service
       - config-server
-      - top-hundred-github
+      - top-hundred-github-repos
     ports:
       - 8081:8081
     restart: on-failure
