@@ -46,14 +46,8 @@ public class LanguageServiceImpl implements LanguageService {
 											  .collect(Collectors.summingInt(Integer::intValue));
 			
 			//Number of Repositories among the top 100 using current programming language
-			Integer reposCount = (int) tempItems.get().count();
+			Integer reposCount = (int) tempItems.get().count();;
 			
-			
-			//List of repositories using current programming language
-			//List<Repository> reposOfCurrentLanguage = getReposFrom(tempItems.get());
-			
-			
-			//top100Languages.add(new Language(langName, totalStars, reposCount, reposOfCurrentLanguage));
 			top100Languages.add(new Language(langName, totalStars, reposCount));
 
 		});
@@ -61,14 +55,12 @@ public class LanguageServiceImpl implements LanguageService {
 		//sort languages by total earned stars in descending order
 		top100Languages.sort(Comparator.comparing(Language::getStars,Comparator.reverseOrder()));
 		
-		//Add HATEOS
+		//Add HATEOS links
 		for(int i=0; i< top100Languages.size(); i++) {
 			
 			top100Languages.get(i)
 							.add(new Link("http://localhost:8079/github/trending/languages/"+(i+1)).withSelfRel())
-							.add(new Link("http://localhost:8079/github/trending/languages/"+(i+1)+"/repositories").withSelfRel());
-							//.add(linkTo(LanguageServiceImpl.class).slash("trending/languages/"+(i+1)).withSelfRel())
-							//.add(linkTo(LanguageServiceImpl.class).slash("trending/languages/"+(i+1)+"/repositories").withRel("repositories"));
+							.add(new Link("http://localhost:8079/github/trending/languages/"+(i+1)+"/repositories").withRel("repositories"));
 		}
 			
 		return top100Languages;

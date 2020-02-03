@@ -11,7 +11,6 @@ public class Item {
 	
 	private String stargazers_count;
 	
-	
 	private String language;
 	
 	private String html_url;

@@ -14,8 +14,6 @@ public class Language extends RepresentationModel<Language>{
 	private int stars;
 	
 	private int numberOfRepos;
-	
-	//private List<Repository> repos;
 
 	public Language() {
 	}
@@ -24,7 +22,6 @@ public class Language extends RepresentationModel<Language>{
 		this.name = name;
 		this.stars = stars;
 		this.numberOfRepos = numberOfRepos;
-		//this.repos = repos;
 	}
 	
 	public Language(String name, int stars, int numberOfRepos) {
@@ -59,16 +56,5 @@ public class Language extends RepresentationModel<Language>{
 	public void setNumberOfRepos(int numberOfRepos) {
 		this.numberOfRepos = numberOfRepos;
 	}
-
-	/*public List<Repository> getRepos() {
-		return repos;
-	}
-
-	public void setRepos(List<Repository> repos) {
-		this.repos = repos;
-	}*/
-	
-	
-	
 
 }
