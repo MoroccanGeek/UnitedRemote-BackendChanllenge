@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.saberhamza</groupId>
-	<artifactId>Top100GithubRepos</artifactId>
+	<artifactId>top-hundred-github-repos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>Top100GithubRepos</name>
-	<description>Top100GithubRepos</description>
+	<name>top-hundred-github-repos</name>
+	<description>top-hundred-github-repos</description>
 
 	<properties>
 		<java.version>1.8</java.version>

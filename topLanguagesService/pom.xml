@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.saberhamza</groupId>
-	<artifactId>topLanguagesService</artifactId>
+	<artifactId>top-languages-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>topLanguagesService</name>
-	<description>TopLanguagesService</description>
+	<name>top-languages-service</name>
+	<description>top-languages-service</description>
 
 	<properties>
 		<java.version>1.8</java.version>
