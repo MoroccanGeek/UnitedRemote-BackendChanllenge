@@ -74,6 +74,4 @@ public class ItemServiceImp implements ItemService {
 							.limit(100)
 							.collect(Collectors.toList());
 	}
-
-	
 }
