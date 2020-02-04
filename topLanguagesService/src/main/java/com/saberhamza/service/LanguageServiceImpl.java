@@ -1,7 +1,5 @@
 package com.saberhamza.service;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -16,10 +14,21 @@ import org.springframework.stereotype.Service;
 import com.saberhamza.entity.Item;
 import com.saberhamza.entity.Language;
 
+/**
+ * LanguageServiceImpl implements LanguageService. Its where the business logic resides to get trending languages in github.
+ * 
+ * @author Hamza SABER
+ *
+ */
 @Service
 public class LanguageServiceImpl implements LanguageService {
 
-	//Get languages by total earned stars in descending order
+	/**
+	 * 
+	 * @param top100Items top 100 github repositories
+	 * 
+	 * @return languages by total earned stars in descending order
+	 */
 	@Override
 	public List<Language> getTrendingLanguagesFrom(List<Item> top100Items) {
 		
@@ -68,9 +77,14 @@ public class LanguageServiceImpl implements LanguageService {
 	
 
 
-	
+	/**
+	 * 
+	 * @param rankId language's rank
+	 * @param top100Items top 100 github repositories
+	 * 
+	 * @return languages by total earned stars in descending order
+	 */
 	@Override
-	//Get language of specified rank
 	public Language getLanguageOfRank(int rankId, List<Item> top100Items) {
 		
 		//trending languages in descending order
@@ -78,8 +92,4 @@ public class LanguageServiceImpl implements LanguageService {
 		
 		return trendingLanguages.get(rankId-1);
 	}
-
-	
-
-
 }

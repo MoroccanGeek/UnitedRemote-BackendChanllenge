@@ -7,6 +7,13 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * 
+ * The main class to start the application.
+ * 
+ * @author Hamza SABER
+ *
+ */
 @SpringBootApplication
 @EnableEurekaClient
 public class TopLanguagesServiceApplication {

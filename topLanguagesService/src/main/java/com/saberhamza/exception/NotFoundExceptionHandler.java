@@ -4,11 +4,21 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
+/**
+ * Handler when an exception occured.
+ * 
+ * @author Hamza SABER
+ *
+ */
 @ControllerAdvice
 public class NotFoundExceptionHandler {
 	
-	//To-Do when specified language Rank is not found
+	/**
+	 * Error to return when specified language Rank is not found.
+	 * 
+	 * @param exc exception
+	 * @return Error response
+	 */
 	@ExceptionHandler
 	public ResponseEntity<ErrorResponse> handleException(RankNotFoundException exc){
 		
@@ -24,7 +34,13 @@ public class NotFoundExceptionHandler {
 		
 	}
 	
-	//To-DO when specified repository is not found
+
+	/**
+	 * Error to return when specified repository is not found.
+	 * 
+	 * @param exc exception
+	 * @return
+	 */
 	@ExceptionHandler
 	public ResponseEntity<ErrorResponse> handleException(RepositoryNotFoundException exc){
 		
@@ -40,7 +56,13 @@ public class NotFoundExceptionHandler {
 		
 	}
 	
-	//Catch any other exception
+
+	/**
+	 * When other errors occured.
+	 * 
+	 * @param exc exception
+	 * @return
+	 */
 	@ExceptionHandler
 	public ResponseEntity<ErrorResponse> handleException(Exception exc){
 		
@@ -55,7 +77,4 @@ public class NotFoundExceptionHandler {
 		return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST);
 		
 	}
-
-	
-
 }

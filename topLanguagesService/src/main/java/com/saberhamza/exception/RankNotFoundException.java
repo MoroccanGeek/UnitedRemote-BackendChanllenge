@@ -1,5 +1,11 @@
 package com.saberhamza.exception;
 
+/**
+ * Exception class when rank is not found.
+ * 
+ * @author Hamza SABER
+ *
+ */
 public class RankNotFoundException extends RuntimeException {
 
 	public RankNotFoundException(String arg0, Throwable arg1) {

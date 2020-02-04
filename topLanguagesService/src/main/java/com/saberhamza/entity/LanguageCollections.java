@@ -2,15 +2,36 @@ package com.saberhamza.entity;
 
 import java.util.List;
 
+/**
+ * Collection of trending languages on github.
+ * 
+ * @author Hamza SABER
+ *
+ */
 public class LanguageCollections {
 	
+	/**
+	 * Number of ranks.
+	 */
 	private int ranksCount;
 	
+	/**
+	 * List of trending languages on github.
+	 */
 	private List<Language> trendingLanguages;
 
+	/**
+	 * no-args constructor
+	 */
 	public LanguageCollections() {
 	}
 	
+	/**
+	 * Constructor for LanguageCollections class
+	 * 
+	 * @param ranksCount Number of ranks.
+	 * @param trendingLanguages List of trending languages on github.
+	 */
 	public LanguageCollections(int ranksCount, List<Language> trendingLanguages) {
 		
 		this.ranksCount = ranksCount;
@@ -36,6 +57,4 @@ public class LanguageCollections {
 		this.trendingLanguages = trendingLanguages;
 	}
 	
-	
-
 }

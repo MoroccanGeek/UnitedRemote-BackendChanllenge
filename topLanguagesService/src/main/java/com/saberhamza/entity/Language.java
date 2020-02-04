@@ -1,29 +1,48 @@
 package com.saberhamza.entity;
 
-import java.util.List;
-
 import org.springframework.hateoas.RepresentationModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * Language class holds information about a certain programming language.
+ * 
+ * @author Hamza SABER
+ *
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Language extends RepresentationModel<Language>{
 	
+	/**
+	 * Name of the language.
+	 */
 	private String name;
 	
+	/**
+	 * Total earned stars of this language.
+	 */
 	private int stars;
 	
+	/**
+	 * Number of repositories using this language.
+	 */
 	private int numberOfRepos;
 
+	/**
+	 * no-args constructor.
+	 */
 	public Language() {
 	}
 
-	public Language(String name, int stars, int numberOfRepos, List<Repository> repos) {
-		this.name = name;
-		this.stars = stars;
-		this.numberOfRepos = numberOfRepos;
-	}
-	
+	/**
+	 * 
+	 * Constructor for language class.
+	 * 
+	 * @param name name of the language
+	 * @param stars stars earned
+	 * @param numberOfRepos Number of repositories using this language.
+	 * @param repos 
+	 */
 	public Language(String name, int stars, int numberOfRepos) {
 		this.name = name;
 		this.stars = stars;

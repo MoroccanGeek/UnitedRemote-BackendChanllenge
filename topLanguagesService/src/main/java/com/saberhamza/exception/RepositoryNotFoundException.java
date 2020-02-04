@@ -1,5 +1,11 @@
 package com.saberhamza.exception;
 
+/**
+ * Exception class when repository not found.
+ * 
+ * @author Hamza SABER
+ *
+ */
 public class RepositoryNotFoundException extends RuntimeException{
 
 	public RepositoryNotFoundException(String message, Throwable cause) {
