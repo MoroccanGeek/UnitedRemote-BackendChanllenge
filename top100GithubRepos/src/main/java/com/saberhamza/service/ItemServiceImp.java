@@ -10,17 +10,36 @@ import org.springframework.web.client.RestTemplate;
 import com.saberhamza.entity.GithubQuery;
 import com.saberhamza.entity.Item;
 
+/**
+ * 
+ * ItemServiceImp implements ItemService. Its where the business logic resides to get the top 100 repositories in github.
+ * 
+ * @author Hamza SABER
+ */
 @Service
 public class ItemServiceImp implements ItemService {
 
-	//Customizable github link to get JSON response of top 100 repositories sorted with earned stars in a descending order
+	/**
+	 * 
+	 * Customizable github link to get JSON response of top 100 repositories sorted with earned stars in a descending order.
+	 * 
+	 * @param theStars filtering the repositories by earned stars
+	 * @param thePage page of query
+	 * 
+	 * @return string of repositories in JSON format
+	 */
 	public String githubSearchApiLink(int theStars,int thePage) {
 		
 		return "https://api.github.com/search/repositories?q=stars:>="+thePage+"&sort=stars&order=desc&page="+thePage+"&per_page=100";
 		
 	}
 	
-	//Get top 100 repositories where language is NOT null
+	/**
+	 * 
+	 * Get top 100 repositories where language is NOT null.
+	 * 
+	 * @return top 100 repositories by earned stars, where the used language is not NULL.
+	 */
 	@Override
 	public List<Item> loadTop100Repos(){
 		

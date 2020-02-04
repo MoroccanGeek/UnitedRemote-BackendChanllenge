@@ -6,6 +6,10 @@ import org.springframework.stereotype.Service;
 
 import com.saberhamza.entity.Item;
 
+/**
+ * 
+ * @author Hamza SABER
+ */
 @Service
 public interface ItemService {
 	
