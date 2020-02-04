@@ -2,13 +2,27 @@ package com.saberhamza.entity;
 
 import java.util.List;
 
+/**
+* ItemCollections is Collection contains list of items.
+* 
+* @author Hamza SABER
+*/
 public class ItemCollections {
 	
+	/**
+	 * List of items.
+	 */
 	private List<Item> items;
 
+	/**
+	 * no-args constructor.
+	 */
 	public ItemCollections() {
 	}
 
+	/**
+	 * Constructor for this class
+	 */
 	public ItemCollections(List<Item> items) {
 		this.items = items;
 	}

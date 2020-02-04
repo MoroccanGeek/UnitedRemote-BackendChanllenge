@@ -2,22 +2,48 @@ package com.saberhamza.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+* Item describes informations about a ceratin repository.
+* 
+* @author Hamza SABER
+*/
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Item {
 	
+	/**
+	 * The name of the repository.
+	 */
 	private String name;
 	
+	/**
+	 * The description of the repository.
+	 */
 	private String description;
 	
+	/**
+	 * The earned stars of the repository.
+	 */
 	private String stargazers_count;
 	
+	/**
+	 * The language used in the repository.
+	 */
 	private String language;
 	
+	/**
+	 * Link to repository.
+	 */
 	private String html_url;
 
+	/**
+	 * no-args constructor.
+	 */
 	public Item() {
 	}
 
+	/**
+	 * Constructor for this class
+	 */
 	public Item(String name, String description, String stargazers_count, String language, String html_url) {
 		super();
 		this.name = name;
